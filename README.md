@@ -20,6 +20,7 @@ bake.ps1
 - コピー先ディレクトリは省略可: デフォルト: `docs`
 
 ```
+curl -O https://github.com/hymkor/bake.ps1/blob/master/bake.ps1
 pwsh bake.ps1 "コピー元ディレクトリ" "コピー先ディレクトリ"
 ```
 
@@ -41,4 +42,9 @@ bake "." ".\docs" {
     param($from,$to)
     nkf32 -w $from | perl -pe 'binmode(STDIN);binmode(STDOUT);s|"http://hp.vector.co.jp/authors/VA009797|"https://hymkor.github.io/hp.vector.co.jp_VA009797|g' > $to
 }
+```
+
+Download example code:
+```
+curl -O https://github.com/hymkor/bake.ps1/blob/master/bake-fiximg.ps1
 ```
